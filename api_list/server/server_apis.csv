@@ -1,8 +1,46 @@
 api_name,description,uri,method,header,params,body
-get_admin_by_id,é€šè¿‡adminIdæŸ¥ç®¡ç†å‘˜ä¿¡æ¯,admin/get/{adminId},GET,,,
-get_admin_list,è·å–ç®¡ç†å‘˜åˆ—è¡¨,admin/getList,POST,,,"{
+get_admin_by_id,Í¨¹ıadminId²é¹ÜÀíÔ±ĞÅÏ¢,admin/get/{adminId},GET,,,
+get_admin_list,»ñÈ¡¹ÜÀíÔ±ÁĞ±í,admin/getList,POST,,,"{
   ""adminId"": 1
 }"
-get_teacher_list,è·å–è€å¸ˆåˆ—è¡¨,eduTeacher/selectTeacherList,POST,,,"{ â€œpageNumâ€: 1,
-   â€œpageSizeâ€: 10
+get_admin_login,¹ÜÀíÔ±µÇÂ¼,admin/login,POST,,,
+add_advert_edu_teacher,"ĞÂÔö¹ã¸æ",advert/addEduTeacher,POST,,,"{
+""advertId"": 1,
+""link"": "",
+""linkContent"": "",
+""linkId"": "",
+""photo"": "",
+""position"": "",
+""title"": "",
+""type"": "",
 }"
+find_advert_by_id,"¸ù¾İid²éÑ¯¹ã¸æ",advert/findOne,POST,,advertId=59,
+update_advert_by_id,"ĞŞ¸Ä¹ã¸æÄÚÈİ",advert/updateAdvert,POST,,,"{
+""advertId"": 1,
+""link"": "",
+""linkContent"": "",
+""linkId"": "",
+""photo"": "",
+""position"": "",
+""title"": "",
+""type"": "",
+}"
+update_advert_by_status,"ĞŞ¸Ä¹ã¸æ×´Ì¬",advert/updateStatus,POST,,advertId=1&&status=2
+del_advert_by_id,"¸ù¾İidÉ¾³ı¹ã¸æ",advert/advertDel,POST,,advertId=59,
+add_course,"ĞÂÔö¿Î³Ì±í",course/addCourse,POST,{"Content_Type": "application/json"}
+get_course_list_type,"»ñÈ¡¿Î³ÌÀàĞÍ",courseLabel/listType,GET
+add_teacher,"ĞÂÔöÀÏÊ¦ĞÅÏ¢",eduTeacher/addEduTeacher,POST
+get_teacher_list,»ñÈ¡ÀÏÊ¦ÁĞ±í,eduTeacher/selectTeacherList,POST,,,"{
+""pageNum"": 1,
+""pageSize"": 10
+}"
+get_teacher_by_id,"¸ù¾İid²éÑ¯ÀÏÊ¦",eduTeacher/findOne,POST
+del_teacher_by_id,"¸ù¾İidÉ¾³ıÀÏÊ¦",eduTeacher/teacherDel,POST
+update_teacher_status_by_id,"ÆôÓÃ»òÕßÍ£ÓÃÀÏÊ¦",eduTeacher/updateStatus,POST
+update_teacher_info_by_id,"ºóÌ¨ĞŞ¸ÄÀÏÊ¦×ÊÁÏ",eduTeacher/updateEduTeacher,POST
+update_file,"ÎÄ¼şÉÏ´«",file/uploadImages,POST,{"Content_Type": "multipart/form-data"}
+add_information,"ĞÂÔö×ÊÑ¶",information/addEduTeacher,POST,{"Content_Type": "application/json"}
+get_information_by_id,"¸ù¾İid²éÑ¯×ÊÑ¶",information/finOne,POST,{"Content_Type": "application/json"}
+del_information_by_id,"¸ù¾İidÉ¾³ı×ÊÑ¶",information/informationDel,POST,{"Content_Type": "application/json"}
+update_information_status_by_id,"ĞŞ¸Ä×ÊÑ¶×´Ì¬",information/updateStatus,POST,{"Content_Type": "application/json"}
+update_information_info_by_id,"±à¼­×ÊÑ¶ÄÚÈİ",information/updateInformation,POST

@@ -1,5 +1,37 @@
 api_name,description,uri,method,header,params,body
-get_user_list,鏌ヨ鐢ㄦ埛淇℃伅,appletsEduUser/findOne,POST,"{""Content_Type"": ""application/json""}",,"{
+get_user_list,查询用户信息,appletsEduUser/findOne,POST,{"Content_Type": "application/json"},,
+get_mycourse_order,获取我的课程订单,courseOrder/myCourseOrder,POST,{"Content_Type": "application/json"},,"{
     ""pageNum"": ""1"",
-    ""pageSize"": ""10""
+    ""pageSize"": ""10"",
+    ""userId"":""15"",
+    ""state"":""0""
 }"
+get_course_order,获取课程订单,courseOrder/create,POST,{"Content_Type": "application/json"},,"{
+  ""cid"": ""7"",
+  ""userId"": ""15""
+}"
+get_course_label_listall,获取所有课程的标签,courseLabel/listall,GET,{"Content_Type": "*/*"},,
+get_course_label_list,获取课程的标签,courseLabel/list,GET,{"Content_Type": "*/*"},pid=0,
+get_course_details,获取课程详情,course/find,POST,{"Content_Type": "application/json"},,
+get_course_search,课程列表关键字搜索,course/search,POST,{"Content_Type": "application/json"},,
+get_course_video,免费微课和k12教辅直播,course/listVideo,POST,{"Content_Type": "application/json"},,"{
+  ""ctypeId"": ""1"",
+  ""labels"": [
+    ""12""
+  ],
+  ""pageNum"": ""0"",
+  ""pageSize"": ""0"",
+  ""type"": ""0""
+}"
+get_index_advert,根据广告位置获取广告,advert/getIndexAdvert,POST,{"Content_Type": "application/json"},position=0,
+get_id_advert,根据id查询广告详情,advert/findOne,POST,{"Content_Type": "application/json"},advertId=0,
+get_home_page_content,进入首页获取展示内容,appletsIndex/getIndexContent,GET,{"Content_Type": "application/json"},,
+get_teacher_course_list,根据id获取老师课程列表,eduTeacher/findTeacherCourseList,POST,{"Content_Type": "application/json"},,"{
+  ""pageNum"": ""1"",
+  ""pageSize"": ""10"",
+  ""teacherId"":""1""
+}"
+get_teacher_details,根据id获取老师详情,eduTeacher/findTeacherDetail,POST,{"Content_Type": "application/json"},teacherId=1,
+get_edu_user_info,查询用户信息,eduUser/findOne,POST,{"Content_Type": "application/json"},,
+get_edu_user_name_photo,查询用户昵称和头像,eduUser/findUserInformation,POST,{"Content_Type": "application/json"},,
+get_home_page_content2,进入首页获取展示内容,index/getIndexContent,GET,{"Content_Type": "application/json"},,

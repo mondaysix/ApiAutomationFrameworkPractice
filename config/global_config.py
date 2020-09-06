@@ -11,7 +11,12 @@ import os
 
 
 class GlobalConfig:
-
+    # 用户的id，这里固定15
+    userId = 15
+    # 课程的id，这里固定73
+    cId = 73
+    #广告位置索引
+    adver_index_list = [1, 2, 3, 4, 5]
     # 获取项目根目录
     root_path = os.path.abspath(".")
     # 获取当前环境参数
